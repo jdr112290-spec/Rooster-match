@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rooster Matcher</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b5" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Rooster Matcher</h1>
+    <p>Match entries (3v3 or 4v4) with ≤ 3oz per rooster pair.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Add Entry</h2>
+
+      <div class="row">
+        <label>Entry #</label>
+        <input id="entryId" inputmode="numeric" placeholder="e.g. 12" />
+      </div>
+
+      <div class="row">
+        <label>Entry Size</label>
+        <select id="entrySize">
+          <option value="3">3 roosters</option>
+          <option value="4">4 roosters</option>
+        </select>
+      </div>
+
+      <div id="roostersForm" class="roosters"></div>
+
+      <div class="buttons">
+        <button id="saveEntryBtn">Save Entry</button>
+        <button class="secondary" id="clearFormBtn">Clear</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Entries</h2>
+      <div class="buttons">
+        <button class="secondary" id="loadSampleBtn">Load Sample</button>
+        <button class="danger" id="clearAllBtn">Clear All</button>
+      </div>
+      <div id="entriesList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Match</h2>
+      <div class="buttons">
+        <button id="matchBtn">Find Matches</button>
+      </div>
+      <div id="matchesList" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Tip: On iPhone, Share → Add to Home Screen.</small>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js");
+    }
+  </script>
+</body>
+</html>
