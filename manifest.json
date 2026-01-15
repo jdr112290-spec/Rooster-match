@@ -1,0 +1,9 @@
+{
+  "name": "Rooster Matcher",
+  "short_name": "Matcher",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00bb55",
+  "icons": []
+}
